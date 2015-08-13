@@ -7,7 +7,7 @@ using the Least Significant Bit steganographic algorithm.
 
 The basic idea of the algorithm is to take each individual bit of the message
 and set it as the least significant bit of each component of each pixel of
-the image. A pixel usually has Red, Green, Blue components and sometimes
+the image. Usually, a pixel has Red, Green, Blue components and sometimes
 an Alpha component. Because the values of these components change very little
 if the least significant bit is changed, the color difference is not
 particularly noticeable, if at all.
@@ -56,7 +56,7 @@ optional arguments:
 
 **Without encryption**
 ```bash
-lsbsteg.py embed -o output.png input.png "the message you want to embed"
+lsbsteg.py embed -o output.png input.png "message to embed"
 ```
 
 **With encryption**
