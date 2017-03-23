@@ -138,7 +138,7 @@ def extract_message(img):
 
 def embed(args, image):
     bits = []
-    if args.key:
+    if hasattr(args, 'key'):
         bits = bits_from_bytes(encrypt(args.message, args.key))
     else:
         bits = bits_from_str(args.message)
@@ -150,7 +150,7 @@ def embed(args, image):
 def extract(args, image):
     message = extract_message(image)
 
-    if args.key:
+    if hasattr(args, 'key'):
         message, ok = decrypt(message, args.key)
         if not ok:
             raise Exception('Could not decrypt message with the provided key')
